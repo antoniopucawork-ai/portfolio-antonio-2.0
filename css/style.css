@@ -281,9 +281,7 @@ html::-webkit-scrollbar-thumb:hover {
    HEADER
 ================================================== */
 
-/* ==================================================
-   HEADER
-================================================== */
+
 
 .header {
   position: fixed;
@@ -327,6 +325,11 @@ html::-webkit-scrollbar-thumb:hover {
     border-color 0.45s ease,
     box-shadow 0.45s ease;
   overflow: hidden;
+}
+.header.scrolled {
+  backdrop-filter: blur(30px);
+
+  background: rgba(5, 5, 8, 0.75);
 }
 
 /* ==========================
@@ -761,11 +764,7 @@ html::-webkit-scrollbar-thumb:hover {
 .hero__photo img:hover {
   transform: translateY(-6px);
 }
-.header.scrolled {
-  backdrop-filter: blur(30px);
 
-  background: rgba(5, 5, 8, 0.75);
-}
 /* ==================================================
    ABOUT
 ================================================== */
@@ -903,107 +902,13 @@ html::-webkit-scrollbar-thumb:hover {
   line-height: 1.8;
 }
 
-/* ---------- SHOWCASE ---------- */
 
-.devices {
-  position: relative;
 
-  display: flex;
 
-  justify-content: center;
 
-  align-items: center;
 
-  min-height: 700px;
 
-  margin: 6rem 0;
-}
 
-.devices::before {
-  content: "";
-
-  position: absolute;
-
-  width: 650px;
-
-  height: 650px;
-
-  background: radial-gradient(
-    circle,
-    rgba(30, 95, 87, 0.18),
-    transparent 70%
-  );
-
-  filter: blur(80px);
-
-  z-index: -1;
-}
-
-/* Desktop */
-
-.desktop-preview {
-  width: 900px;
-
-  overflow: hidden;
-
-  border-radius: 24px;
-
-  background: #0d0d10;
-
-  border: 1px solid rgba(255, 255, 255, 0.08);
-
-  box-shadow: 0 50px 100px rgba(0, 0, 0, 0.45);
-
-  transform: rotate(-2deg);
-
-  transition: transform 0.45s ease;
-}
-
-.desktop-preview img {
-  display: block;
-
-  width: 100%;
-}
-
-.desktop-preview:hover {
-  transform: rotate(-1deg) translateY(-12px);
-}
-
-/* Mobile */
-
-.mobile-preview {
-  position: absolute;
-
-  right: 20px;
-
-  bottom: -30px;
-
-  width: 220px;
-
-  overflow: hidden;
-
-  border-radius: 34px;
-
-  border: 10px solid #111;
-
-  background: #111;
-
-  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.45);
-
-  transform: rotate(8deg);
-
-  transition: transform 0.45s ease;
-}
-
-.mobile-preview img {
-  display: block;
-
-  width: 100%;
-}
-
-.mobile-preview:hover {
-  transform: rotate(5deg) translateY(-18px);
-}
 
 /* ---------- STORY ---------- */
 
@@ -1062,13 +967,7 @@ html::-webkit-scrollbar-thumb:hover {
    TIMELINE
 ========================================== */
 
-.timeline {
-  position: relative;
 
-  margin-top: 8rem;
-
-  padding: 4rem 0;
-}
 
 .timeline__items {
   display: flex;
