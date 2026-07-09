@@ -1,0 +1,119 @@
+/* ==================================================
+   ABOUT
+================================================== */
+
+.about {
+  position: relative;
+
+  padding: 12rem 0;
+}
+
+/* ------------------------------------------
+   CONTENT
+------------------------------------------ */
+
+.about__content {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: 6rem;
+}
+
+/* ------------------------------------------
+   DIVIDER
+------------------------------------------ */
+
+.about__content::before {
+  content: "";
+
+  position: absolute;
+
+  top: 10%;
+  bottom: 10%;
+  left: 50%;
+
+  width: 1px;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+}
+
+/* ------------------------------------------
+   LEFT COLUMN
+------------------------------------------ */
+
+.about__left h2 {
+  max-width: 620px;
+
+  font-size: clamp(3rem, 5vw, 4.8rem);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -3px;
+}
+
+/* ------------------------------------------
+   RIGHT COLUMN
+------------------------------------------ */
+
+.about__right {
+  max-width: 540px;
+}
+
+.about__right p {
+  margin-bottom: 2rem;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: 1.12rem;
+  line-height: 2;
+
+  transition: color var(--transition);
+}
+
+/* ------------------------------------------
+   SIGNATURE
+------------------------------------------ */
+
+.about__signature {
+  display: inline-block;
+
+  margin-top: 4rem;
+
+  color: var(--forest);
+
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  opacity: 0.9;
+}
+
+/* ------------------------------------------
+   SECTION LABEL
+------------------------------------------ */
+
+.about .section-label {
+  display: inline-block;
+
+  margin-bottom: 3rem;
+}
+
+/* ------------------------------------------
+   HOVER EFFECT
+------------------------------------------ */
+
+.about:hover .about__content::before {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(120, 255, 220, 0.25),
+    transparent
+  );
+}

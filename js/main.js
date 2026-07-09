@@ -54,30 +54,33 @@ const polaris = document.querySelector(".polaris");
 const navWrapper = document.querySelector(".nav-wrapper");
 const navLinks = document.querySelectorAll(".nav-link");
 
-// Sposta Polaris
+let activeLink = navLinks[0];
+
 function movePolaris(link) {
   const wrapperRect = navWrapper.getBoundingClientRect();
   const linkRect = link.getBoundingClientRect();
 
   const centerX = linkRect.left - wrapperRect.left + linkRect.width / 2;
-  console.log(centerX);
+
   polaris.style.left = `${centerX}px`;
   polaris.style.opacity = "1";
 }
 
-// Appena il sito è pronto
 window.addEventListener("load", () => {
-  movePolaris(navLinks[0]);
+  movePolaris(activeLink);
 });
 
-// Hover sui link
 navLinks.forEach((link) => {
   link.addEventListener("mouseenter", () => {
     movePolaris(link);
   });
+
+  link.addEventListener("click", () => {
+    activeLink = link;
+    movePolaris(activeLink);
+  });
 });
 
-// Quando esci dalla navbar
 navWrapper.addEventListener("mouseleave", () => {
-  movePolaris(navLinks[0]);
+  movePolaris(activeLink);
 });

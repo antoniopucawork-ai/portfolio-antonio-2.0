@@ -1,0 +1,33 @@
+/* ==================================================
+   UTILITIES
+================================================== */
+
+/* ==========================================
+   TEXT SELECTION
+========================================== */
+
+::selection {
+  background: var(--forest);
+  color: var(--white);
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+html::-webkit-scrollbar {
+  width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--surface-light);
+  border-radius: 999px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: var(--mauve);
+}

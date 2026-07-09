@@ -1,0 +1,112 @@
+/* ==================================================
+   HERO
+================================================== */
+
+.hero {
+  display: flex;
+  align-items: center;
+
+  min-height: 100vh;
+}
+
+/* ------------------------------------------
+   HERO CONTENT
+------------------------------------------ */
+
+.hero__content {
+  display: grid;
+
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 6rem;
+}
+
+/* ------------------------------------------
+   HERO EYEBROW
+------------------------------------------ */
+
+.hero__eyebrow {
+  display: flex;
+
+  align-items: center;
+  gap: 1rem;
+
+  margin-bottom: 2rem;
+
+  color: var(--text-muted);
+
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.hero__eyebrow::before {
+  content: "";
+
+  width: 70px;
+  height: 2px;
+
+  background: var(--forest);
+}
+
+/* ------------------------------------------
+   HERO TEXT
+------------------------------------------ */
+
+.hero__text {
+  max-width: 640px;
+}
+
+.hero__title {
+  margin-bottom: 2.5rem;
+
+  font-size: clamp(5rem, 8vw, 7.5rem);
+  line-height: 0.92;
+  letter-spacing: -5px;
+}
+
+.hero__description {
+  max-width: 560px;
+
+  margin: 2rem 0 3.5rem;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: 1.15rem;
+  font-weight: 300;
+  line-height: 1.7;
+  letter-spacing: 0.2px;
+}
+
+.hero__actions {
+  display: flex;
+
+  align-items: center;
+  gap: 1rem;
+}
+/* ------------------------------------------
+   HERO IMAGE
+------------------------------------------ */
+
+.hero__photo {
+  width: 420px;
+  max-width: 100%;
+}
+
+.hero__photo img {
+  display: block;
+
+  width: 100%;
+
+  border-radius: 28px;
+
+  object-fit: cover;
+
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+
+  transition: transform var(--transition);
+}
+
+.hero__photo img:hover {
+  transform: translateY(-6px);
+}
