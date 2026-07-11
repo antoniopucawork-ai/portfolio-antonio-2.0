@@ -84,3 +84,33 @@ navLinks.forEach((link) => {
 navWrapper.addEventListener("mouseleave", () => {
   movePolaris(activeLink);
 });
+// ==========================================
+// EVOLUTION TIMELINE OBSERVER
+// ==========================================
+
+// Prende tutte le tappe della timeline
+const timelineItems = document.querySelectorAll(".timeline__item");
+
+// Crea l'osservatore
+const timelineObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      // Controlla se la card è entrata nel viewport
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+
+        // Dopo la prima attivazione non serve più osservarla
+        timelineObserver.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    // La card si attiva quando circa il 30% è visibile
+    threshold: 0.3,
+  },
+);
+
+// Dice all'observer di controllare ogni card
+timelineItems.forEach((item) => {
+  timelineObserver.observe(item);
+});
