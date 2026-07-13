@@ -13,6 +13,8 @@
 @import url("./base/base.css");
 @import url("./base/typography.css");
 @import url("./base/utilities.css");
+@import url("./base/universe.css");
+
 
 /* ==================================================
    LAYOUT
@@ -36,3 +38,6 @@
 @import url("./sections/hero.css");
 @import url("./sections/about.css");
 @import url("./sections/evolution.css");
+@import "./sections/gateway.css";
+@import url("./sections/projects.css");
+@import url("./sections/mission-log.css");

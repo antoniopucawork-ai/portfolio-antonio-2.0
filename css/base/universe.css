@@ -1,0 +1,124 @@
+/* ==================================================
+   AP UNIVERSE BACKGROUND
+================================================== */
+
+body::before {
+  content: "";
+
+  position: fixed;
+  inset: -30%;
+
+  z-index: -2;
+  pointer-events: none;
+
+  background:
+  /* Milky Way band */
+    linear-gradient(
+      125deg,
+      transparent 20%,
+      rgba(70, 110, 255, 0.025) 31%,
+      rgba(120, 100, 230, 0.07) 39%,
+      rgba(210, 115, 220, 0.1) 47%,
+      rgba(85, 165, 235, 0.09) 55%,
+      rgba(255, 180, 95, 0.055) 62%,
+      transparent 76%
+    ),
+    /* Cosmic dust */
+    linear-gradient(
+        125deg,
+        transparent 28%,
+        rgba(255, 255, 255, 0.018) 39%,
+        rgba(255, 230, 210, 0.03) 48%,
+        rgba(205, 220, 255, 0.025) 57%,
+        transparent 68%
+      ),
+    /* Orange glow */
+    radial-gradient(
+        ellipse at 84% 16%,
+        rgba(255, 130, 70, 0.16),
+        transparent 27%
+      ),
+    /* Golden glow */
+    radial-gradient(
+        ellipse at 38% 76%,
+        rgba(255, 215, 95, 0.12),
+        transparent 28%
+      ),
+    /* Blue nebula */
+    radial-gradient(
+        ellipse at 76% 32%,
+        rgba(55, 135, 230, 0.16),
+        transparent 36%
+      ),
+    /* Magenta light */
+    radial-gradient(
+        ellipse at 58% 66%,
+        rgba(205, 75, 180, 0.11),
+        transparent 31%
+      ),
+    /* Cyan depth */
+    radial-gradient(
+        ellipse at 16% 82%,
+        rgba(35, 165, 185, 0.13),
+        transparent 30%
+      ),
+    /* Violet nebula */
+    radial-gradient(
+        ellipse at 18% 20%,
+        rgba(115, 75, 205, 0.11),
+        transparent 32%
+      ),
+    /* Warm distant light */
+    radial-gradient(circle at 88% 84%, rgba(255, 175, 90, 0.1), transparent 24%);
+
+  opacity: 0.95;
+
+  transform: scale(1.08);
+
+  filter: blur(95px);
+}
+
+body::after {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    /* Tiny stars */
+    radial-gradient(
+      circle at 12% 18%,
+      rgba(255, 255, 255, 0.55) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 30% 70%,
+      rgba(190, 215, 255, 0.42) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 52% 24%,
+      rgba(255, 235, 205, 0.38) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 72% 62%,
+      rgba(215, 195, 255, 0.42) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 90% 35%,
+      rgba(255, 255, 255, 0.45) 0 1px,
+      transparent 1.5px
+    ),
+    /* Dark atmospheric layer */
+    linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.015),
+        transparent 28%,
+        rgba(0, 0, 0, 0.18)
+      );
+}

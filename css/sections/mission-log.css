@@ -1,0 +1,111 @@
+/* ==================================================
+   MISSION LOG
+================================================== */
+
+.mission-log {
+  padding: 8rem 0 10rem;
+}
+
+.mission-log__hero {
+  max-width: 760px;
+
+  margin-bottom: 7rem;
+}
+
+.mission-log__status {
+  display: inline-block;
+
+  margin-bottom: 1.5rem;
+}
+
+.mission-log__title {
+  margin-bottom: 2rem;
+
+  font-size: clamp(4rem, 7vw, 6rem);
+
+  line-height: 0.95;
+
+  letter-spacing: -4px;
+}
+
+.mission-log__lead {
+  max-width: 650px;
+
+  color: var(--text-muted);
+
+  line-height: 1.9;
+}
+/* ------------------------------------------
+   SECTIONS
+------------------------------------------ */
+
+.mission-log__section {
+  display: grid;
+
+  grid-template-columns: 80px 1fr;
+
+  gap: 3rem;
+
+  padding: 4rem 0;
+
+  border-top: 1px solid var(--border);
+}
+.mission-log__number {
+  color: rgba(255, 231, 174, 0.7);
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+.mission-log__section h2 {
+  margin-bottom: 1.5rem;
+}
+.mission-log__section p {
+  max-width: 720px;
+
+  color: var(--text-muted);
+
+  line-height: 1.9;
+}
+.mission-log__progress {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1rem;
+
+  padding: 0;
+
+  list-style: none;
+}
+.mission-log__progress li {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding: 1rem 0;
+
+  border-bottom: 1px solid var(--border);
+}
+.mission-log__progress strong {
+  color: #ffe7ae;
+}
+/* ------------------------------------------
+   HEADER
+------------------------------------------ */
+
+.mission-header {
+  padding: 2rem 0;
+}
+
+.mission-header__back {
+  color: var(--text-muted);
+
+  transition: color var(--transition);
+}
+
+.mission-header__back:hover {
+  color: var(--text);
+}
