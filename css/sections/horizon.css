@@ -1,0 +1,325 @@
+/* ==================================================
+   THE HORIZON
+================================================== */
+
+.horizon {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  min-height: 100vh;
+
+  padding: 12rem 0 10rem;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      to bottom,
+      var(--bg) 0%,
+      rgba(13, 13, 18, 0.96) 8%,
+      rgba(13, 13, 18, 0.72) 20%,
+      rgba(13, 13, 18, 0.28) 36%,
+      transparent 52%
+    ),
+    linear-gradient(
+      to top,
+      var(--bg) 0%,
+      rgba(13, 13, 18, 0.92) 10%,
+      rgba(13, 13, 18, 0.55) 24%,
+      transparent 42%
+    );
+}
+
+/* ==================================================
+   GALAXY LIGHT
+================================================== */
+
+.horizon::before {
+  content: "";
+
+  position: absolute;
+  inset: -20%;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 48%,
+      rgba(140, 115, 255, 0.18),
+      transparent 34%
+    ),
+    radial-gradient(
+      ellipse at 72% 36%,
+      rgba(70, 145, 255, 0.14),
+      transparent 30%
+    ),
+    radial-gradient(
+      ellipse at 34% 72%,
+      rgba(255, 145, 85, 0.09),
+      transparent 28%
+    ),
+    radial-gradient(
+      ellipse at 18% 45%,
+      rgba(180, 90, 215, 0.08),
+      transparent 26%
+    ),
+    linear-gradient(
+      122deg,
+      transparent 25%,
+      rgba(110, 125, 255, 0.05) 37%,
+      rgba(185, 105, 225, 0.1) 48%,
+      rgba(85, 155, 240, 0.07) 59%,
+      transparent 73%
+    );
+
+  filter: blur(75px);
+
+  opacity: 0.9;
+
+  /*
+   * Anche la luce della galassia nasce lentamente dall’alto.
+   */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+
+    transparent 0%,
+
+    rgba(0, 0, 0, 0.15) 12%,
+
+    rgba(0, 0, 0, 0.55) 28%,
+
+    rgba(0, 0, 0, 0.9) 50%,
+
+    #000 68%,
+
+    rgba(0, 0, 0, 0.7) 84%,
+
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to bottom,
+
+    transparent 0%,
+
+    rgba(0, 0, 0, 0.15) 12%,
+
+    rgba(0, 0, 0, 0.55) 28%,
+
+    rgba(0, 0, 0, 0.9) 50%,
+
+    #000 68%,
+
+    rgba(0, 0, 0, 0.7) 84%,
+
+    transparent 100%
+  );
+}
+
+/* ==================================================
+   STAR FIELD
+================================================== */
+
+.horizon::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 8% 12%,
+      rgba(255, 255, 255, 0.9) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 15% 36%,
+      rgba(170, 210, 255, 0.75) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 22% 68%,
+      rgba(255, 225, 185, 0.65) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 31% 18%,
+      rgba(255, 255, 255, 0.7) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 39% 52%,
+      rgba(195, 175, 255, 0.75) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 46% 82%,
+      rgba(255, 255, 255, 0.65) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 54% 24%,
+      rgba(160, 205, 255, 0.8) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 62% 62%,
+      rgba(255, 230, 190, 0.7) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 70% 14%,
+      rgba(255, 255, 255, 0.85) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 78% 42%,
+      rgba(190, 170, 255, 0.72) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 86% 76%,
+      rgba(255, 255, 255, 0.75) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 94% 28%,
+      rgba(165, 210, 255, 0.82) 0 1px,
+      transparent 1.5px
+    );
+
+  background-size:
+    130px 130px,
+    170px 170px,
+    210px 210px,
+    145px 145px,
+    190px 190px,
+    230px 230px,
+    155px 155px,
+    205px 205px,
+    175px 175px,
+    240px 240px,
+    185px 185px,
+    220px 220px;
+
+  opacity: 0.58;
+
+  /*
+   * In alto ci sono pochissime stelle.
+   * La densità aumenta gradualmente scendendo.
+   */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+
+    transparent 0%,
+
+    rgba(0, 0, 0, 0.08) 10%,
+
+    rgba(0, 0, 0, 0.3) 24%,
+
+    rgba(0, 0, 0, 0.72) 46%,
+
+    #000 68%,
+
+    rgba(0, 0, 0, 0.65) 82%,
+
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to bottom,
+
+    transparent 0%,
+
+    rgba(0, 0, 0, 0.08) 10%,
+
+    rgba(0, 0, 0, 0.3) 24%,
+
+    rgba(0, 0, 0, 0.72) 46%,
+
+    #000 68%,
+
+    rgba(0, 0, 0, 0.65) 82%,
+
+    transparent 100%
+  );
+}
+
+/* ==================================================
+   CONTENT
+================================================== */
+
+.horizon__content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 880px;
+
+  margin-inline: auto;
+
+  text-align: center;
+}
+
+.horizon__eyebrow {
+  display: inline-block;
+
+  margin-bottom: 2rem;
+
+  color: #ffe7ae;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.horizon__title {
+  margin-bottom: 2.5rem;
+
+  font-size: clamp(4rem, 8vw, 7rem);
+
+  line-height: 0.92;
+
+  letter-spacing: -5px;
+}
+
+.horizon__text {
+  margin-bottom: 1.5rem;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+
+  line-height: 1.8;
+}
+
+.horizon__closing {
+  color: var(--text);
+
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+
+  font-weight: 500;
+}
+
+.horizon__signature {
+  display: inline-block;
+
+  margin-top: 4rem;
+
+  color: rgba(255, 255, 255, 0.48);
+
+  font-size: 0.85rem;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
