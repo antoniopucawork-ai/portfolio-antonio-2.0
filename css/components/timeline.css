@@ -176,59 +176,6 @@
     transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 /* ------------------------------------------
-   REVEAL STATE
------------------------------------------- */
-
-.timeline__item {
-  opacity: 0;
-
-  transform: translateY(40px);
-
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
-}
-
-.timeline__item::before {
-  opacity: 0.2;
-
-  transition:
-    opacity 0.8s ease,
-    box-shadow 0.8s ease;
-}
-
-.timeline__item.is-visible {
-  opacity: 1;
-
-  transform: translateY(0);
-}
-
-.timeline__item.is-visible::before {
-  opacity: 1;
-
-  box-shadow: 0 0 18px rgba(255, 228, 165, 0.2);
-}
-
-.timeline__item.is-visible .timeline__star {
-  opacity: 1;
-
-  transform: scale(1);
-
-  box-shadow:
-    0 0 14px rgba(255, 255, 255, 1),
-    0 0 30px rgba(255, 236, 180, 0.9),
-    0 0 58px rgba(255, 220, 140, 0.42),
-    0 0 90px rgba(255, 220, 140, 0.18);
-}
-
-.timeline__item.is-visible .timeline__star {
-  opacity: 1;
-
-  transform: scale(1);
-
-animation: timelineStarBirth 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;}
-
-/* ------------------------------------------
    PROJECT CARD
 ------------------------------------------ */
 
@@ -407,6 +354,8 @@ animation: timelineStarBirth 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;}
   opacity: 1;
 
   transform: scale(1.15);
+
+  animation: timelineStarBirth 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;
 
   box-shadow:
     0 0 12px rgba(255, 248, 222, 0.95),
