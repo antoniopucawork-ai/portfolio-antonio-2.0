@@ -2,23 +2,27 @@
 // AP UNIVERSE ENGINE v2
 // ==========================================
 
-// Tutti i Universe Link
+// Tutti gli elementi dell'universo che reagiscono al mouse
 const universeLinks = document.querySelectorAll(".universe-link");
 
-// Posizione del mouse
+// Posizione iniziale del mouse
 let mouseX = 0;
 let mouseY = 0;
 
-// Aggiorna continuamente la posizione del mouse
+// Aggiorna la posizione del mouse
 window.addEventListener("mousemove", (event) => {
   mouseX = event.clientX;
   mouseY = event.clientY;
 });
 
-// Aggiorna lo stato delle stelle
-function updateUniverse() {
+// Calcola la distanza tra il mouse e ogni stella
+const updateUniverse = () => {
   universeLinks.forEach((link) => {
     const node = link.querySelector(".universe-node");
+
+    if (!node) {
+      return;
+    }
 
     const rect = node.getBoundingClientRect();
 
@@ -36,27 +40,34 @@ function updateUniverse() {
 
     link.style.setProperty("--energy", intensity);
   });
-}
+};
 
-// Animation Loop
-function animate() {
+// Loop continuo dell'universo
+const animateUniverse = () => {
   updateUniverse();
 
-  requestAnimationFrame(animate);
-}
+  requestAnimationFrame(animateUniverse);
+};
 
-animate();
+animateUniverse();
+
 // ==========================================
-// UNIVERSE COMPASS ENGINE v1
+// UNIVERSE COMPASS ENGINE
 // ==========================================
 
 const polaris = document.querySelector(".polaris");
 const navWrapper = document.querySelector(".nav-wrapper");
 const navLinks = document.querySelectorAll(".nav-link");
 
-let activeLink = navLinks[0];
+// Il primo link è attivo al caricamento
+let activeLink = navLinks[0] || null;
 
-function movePolaris(link) {
+// Sposta Polaris sotto il link ricevuto
+const movePolaris = (link) => {
+  if (!link || !polaris || !navWrapper) {
+    return;
+  }
+
   const wrapperRect = navWrapper.getBoundingClientRect();
   const linkRect = link.getBoundingClientRect();
 
@@ -64,53 +75,152 @@ function movePolaris(link) {
 
   polaris.style.left = `${centerX}px`;
   polaris.style.opacity = "1";
-}
+};
 
-window.addEventListener("load", () => {
+// Imposta il link attivo
+const setActiveLink = (link) => {
+  if (!link) {
+    return;
+  }
+
+  activeLink = link;
+
+  navLinks.forEach((navLink) => {
+    navLink.classList.toggle("active", navLink === activeLink);
+  });
+
   movePolaris(activeLink);
-});
+};
 
+// Polaris segue il mouse quando passa sui link
 navLinks.forEach((link) => {
   link.addEventListener("mouseenter", () => {
     movePolaris(link);
   });
 
   link.addEventListener("click", () => {
-    activeLink = link;
-    movePolaris(activeLink);
+    setActiveLink(link);
   });
 });
 
-navWrapper.addEventListener("mouseleave", () => {
-  movePolaris(activeLink);
+// Quando il mouse esce dalla navbar,
+// Polaris torna alla sezione attiva
+if (navWrapper) {
+  navWrapper.addEventListener("mouseleave", () => {
+    movePolaris(activeLink);
+  });
+}
+
+// ==========================================
+// ACTIVE NAVIGATION ON SCROLL
+// ==========================================
+
+// Recupera soltanto le sezioni presenti nella navbar
+const observedSections = [];
+
+navLinks.forEach((link) => {
+  const sectionSelector = link.getAttribute("href");
+
+  if (!sectionSelector || !sectionSelector.startsWith("#")) {
+    return;
+  }
+
+  const section = document.querySelector(sectionSelector);
+
+  if (section) {
+    observedSections.push(section);
+  }
 });
-// ==========================================
-// EVOLUTION TIMELINE OBSERVER
-// ==========================================
 
-// Prende tutte le tappe della timeline
-const timelineItems = document.querySelectorAll(".timeline__item");
-
-// Crea l'osservatore
-const timelineObserver = new IntersectionObserver(
+// Osserva quale sezione attraversa il centro dello schermo
+const sectionObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
-      // Controlla se la card è entrata nel viewport
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
+      if (!entry.isIntersecting) {
+        return;
+      }
 
-        // Dopo la prima attivazione non serve più osservarla
-        timelineObserver.unobserve(entry.target);
+      const matchingLink = [...navLinks].find(
+        (link) => link.getAttribute("href") === `#${entry.target.id}`,
+      );
+
+      if (matchingLink) {
+        setActiveLink(matchingLink);
       }
     });
   },
   {
-    // La card si attiva quando circa il 30% è visibile
+    rootMargin: "-35% 0px -55% 0px",
+    threshold: 0,
+  },
+);
+
+// Attiva l'osservazione
+observedSections.forEach((section) => {
+  sectionObserver.observe(section);
+});
+
+// ==========================================
+// EVOLUTION TIMELINE OBSERVER
+// ==========================================
+
+const timelineItems = document.querySelectorAll(".timeline__item");
+
+const timelineObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        return;
+      }
+
+      entry.target.classList.add("is-visible");
+
+      // L'animazione viene eseguita una sola volta
+      timelineObserver.unobserve(entry.target);
+    });
+  },
+  {
     threshold: 0.3,
   },
 );
 
-// Dice all'observer di controllare ogni card
 timelineItems.forEach((item) => {
   timelineObserver.observe(item);
 });
+
+// ==========================================
+// INITIAL POSITION AND RESIZE
+// ==========================================
+
+// Posiziona Polaris al caricamento completo della pagina
+window.addEventListener("load", () => {
+  setActiveLink(activeLink);
+});
+
+// Ricalcola la posizione se cambia la larghezza della finestra
+window.addEventListener("resize", () => {
+  movePolaris(activeLink);
+});
+// ==========================================
+// MOBILE NAVIGATION
+// ==========================================
+
+const navbar = document.querySelector(".navbar");
+const menuToggle = document.querySelector(".menu-toggle");
+const mobileNavLinks = document.querySelectorAll(".nav-link");
+
+if (navbar && menuToggle) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = navbar.classList.toggle("menu-open");
+
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  mobileNavLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navbar.classList.remove("menu-open");
+
+      menuToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+}

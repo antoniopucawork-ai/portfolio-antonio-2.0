@@ -15,7 +15,6 @@
 @import url("./base/utilities.css");
 @import url("./base/universe.css");
 
-
 /* ==================================================
    LAYOUT
 ================================================== */
@@ -38,8 +37,21 @@
 @import url("./sections/hero.css");
 @import url("./sections/about.css");
 @import url("./sections/evolution.css");
-@import "./sections/gateway.css";
+@import url("./sections/gateway.css");
 @import url("./sections/projects.css");
 @import url("./sections/mission-log.css");
 @import url("./sections/horizon.css");
-@import url("./sections/contact.css")
+@import url("./sections/contact.css");
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+@import url("./layout/footer.css");
+
+/* ==================================================
+   RESPONSIVE
+   Deve restare sempre per ultimo
+================================================== */
+
+@import url("./responsive/responsive.css");

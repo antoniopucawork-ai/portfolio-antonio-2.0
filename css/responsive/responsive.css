@@ -1,0 +1,198 @@
+/* ==================================================
+   RESPONSIVE
+   Antonio Puca Portfolio
+================================================== */
+
+/* ==================================================
+   TABLET
+   fino a 1024px
+================================================== */
+
+@media (max-width: 1024px) {
+  .hero__content {
+    gap: 3rem;
+  }
+
+  .hero__title {
+    letter-spacing: -3px;
+  }
+
+  .hero__photo {
+    width: 340px;
+  }
+}
+
+/* ==================================================
+   MOBILE
+   fino a 768px
+================================================== */
+
+@media (max-width: 768px) {
+  /* ------------------------------------------
+     MOBILE NAVIGATION
+  ------------------------------------------ */
+
+  .nav-wrapper {
+    position: absolute;
+
+    top: calc(100% + 0.75rem);
+    left: 0;
+    right: 0;
+
+    display: block;
+
+    padding: 1rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+
+    background: rgba(5, 5, 9, 0.96);
+
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.42);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-10px);
+
+    transition:
+      opacity var(--transition),
+      visibility var(--transition),
+      transform var(--transition);
+  }
+  .nav {
+  flex-direction: column;
+
+  align-items: stretch;
+
+  gap: 0;
+}
+
+.nav li {
+  width: 100%;
+}
+
+.nav-link {
+  display: block;
+
+  width: 100%;
+
+  padding: 1rem;
+
+  border-radius: 14px;
+
+  font-size: 1rem;
+}
+
+.polaris {
+  display: none;
+}
+
+.navbar.menu-open .nav-wrapper {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateY(0);
+}
+
+  .menu-toggle {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+  }
+
+  .menu-symbol {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 24px;
+    height: 2px;
+
+    border-radius: 999px;
+
+    background: #ffe7ae;
+
+    transition:
+      transform 0.45s ease,
+      opacity 0.3s ease;
+  }
+
+  .menu-symbol--one {
+    transform: translate(-50%, -8px);
+  }
+
+  .menu-symbol--two {
+    transform: translate(-50%, -50%);
+  }
+
+  .menu-symbol--three {
+    transform: translate(-50%, 6px);
+  }
+
+  /* ------------------------------------------
+     HERO
+  ------------------------------------------ */
+
+  .hero {
+    padding: 7rem 0 4rem;
+  }
+
+  .hero__content {
+    grid-template-columns: 1fr;
+
+    gap: 3rem;
+
+    text-align: center;
+  }
+
+  .hero__text {
+    max-width: 100%;
+  }
+
+  .hero__eyebrow {
+    justify-content: center;
+  }
+
+  .hero__description {
+    max-width: 100%;
+
+    margin-inline: auto;
+  }
+
+  .hero__actions {
+    justify-content: center;
+
+    flex-wrap: wrap;
+  }
+
+  .hero__photo {
+    width: 320px;
+
+    margin-inline: auto;
+  }
+}
+
+/* ==================================================
+   SMALL MOBILE
+   fino a 480px
+================================================== */
+
+@media (max-width: 480px) {
+}

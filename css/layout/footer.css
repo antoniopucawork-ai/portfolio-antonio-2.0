@@ -1,0 +1,56 @@
+/* ==================================================
+   FOOTER
+================================================== */
+
+.footer {
+  position: relative;
+
+  padding: 4rem 0;
+
+  overflow: hidden;
+
+  background: linear-gradient(to bottom, #030408, #020205 45%, #000000);
+}
+
+.footer::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: min(700px, 70%);
+  height: 1px;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 230, 170, 0.35),
+    transparent
+  );
+}
+
+.footer .container {
+  text-align: center;
+}
+
+.footer p {
+  margin-bottom: 1rem;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: 1.05rem;
+
+  letter-spacing: 0.4px;
+}
+
+.footer small {
+  color: rgba(255, 255, 255, 0.42);
+
+  font-size: 0.9rem;
+
+  letter-spacing: 1px;
+}

@@ -49,6 +49,7 @@
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
 }
+
 /* ------------------------------------------
    LOGO
 ------------------------------------------ */
@@ -79,6 +80,7 @@
 
   text-shadow: 0 0 10px rgba(255, 230, 170, 0.45);
 }
+
 /* ------------------------------------------
    NAVIGATION
 ------------------------------------------ */
@@ -96,6 +98,7 @@
   display: flex;
   align-items: center;
 }
+
 /* ------------------------------------------
    POLARIS
 ------------------------------------------ */
@@ -194,4 +197,28 @@
   color: var(--white);
 
   transform: translateY(-1px);
+}
+
+.nav-link.active {
+  color: #ffffff;
+}
+
+/* ------------------------------------------
+   MOBILE MENU TOGGLE
+------------------------------------------ */
+
+.menu-toggle {
+  display: none;
+
+  position: relative;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+
+  cursor: pointer;
 }
