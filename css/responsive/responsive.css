@@ -9,6 +9,14 @@
 ================================================== */
 
 @media (max-width: 1024px) {
+  .navbar {
+    padding: 0 1.6rem;
+  }
+
+  .nav {
+    gap: 2rem;
+  }
+
   .hero__content {
     gap: 3rem;
   }
@@ -32,10 +40,24 @@
      MOBILE NAVIGATION
   ------------------------------------------ */
 
+  .header {
+    top: 0.85rem;
+
+    width: min(100% - 1.5rem, 1350px);
+  }
+
   .navbar {
     position: relative;
 
+    height: 64px;
+
+    padding: 0 0.9rem 0 1.2rem;
+
     overflow: visible;
+  }
+
+  .logo {
+    font-size: 0.98rem;
   }
 
   .nav-wrapper {
@@ -48,6 +70,10 @@
     display: block;
 
     padding: 1rem;
+
+    max-height: calc(100vh - 6rem);
+
+    overflow-y: auto;
 
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 24px;
@@ -238,4 +264,40 @@
 ================================================== */
 
 @media (max-width: 480px) {
+  .header {
+    top: 0.7rem;
+
+    width: min(100% - 1rem, 1350px);
+  }
+
+  .navbar {
+    height: 60px;
+
+    padding: 0 0.7rem 0 1rem;
+  }
+
+  .logo {
+    gap: 0.35rem;
+
+    font-size: 0.9rem;
+  }
+
+  .menu-toggle {
+    width: 44px;
+    height: 44px;
+  }
+
+  .nav-wrapper {
+    top: calc(100% + 0.55rem);
+
+    padding: 0.75rem;
+
+    border-radius: 20px;
+  }
+
+  .nav-link {
+    padding: 0.9rem;
+
+    font-size: 0.95rem;
+  }
 }
