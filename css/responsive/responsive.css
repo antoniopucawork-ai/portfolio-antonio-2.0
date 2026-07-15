@@ -9,6 +9,14 @@
 ================================================== */
 
 @media (max-width: 1024px) {
+  .container {
+    width: min(var(--container), calc(100% - 4rem));
+  }
+
+  section {
+    padding: 6rem 0;
+  }
+
   .navbar {
     padding: 0 1.6rem;
   }
@@ -28,6 +36,48 @@
   .hero__photo {
     width: 340px;
   }
+
+  .about {
+    padding: 8rem 0;
+  }
+
+  .about__content {
+    gap: 4rem;
+  }
+
+  .evolution {
+    padding: 8rem 0 7rem;
+  }
+
+  .timeline__item {
+    gap: 2.5rem;
+
+    grid-template-columns: minmax(0, 1fr) 56px minmax(0, 1fr);
+  }
+
+  .projects__worlds {
+    gap: 6rem;
+  }
+
+  .world-card {
+    gap: 3rem;
+
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.85fr);
+  }
+
+  .next-mission {
+    gap: 3rem;
+
+    padding: 3rem;
+  }
+
+  .next-mission__visual {
+    min-height: 340px;
+  }
+
+  .horizon {
+    padding: 9rem 0 8rem;
+  }
 }
 
 /* ==================================================
@@ -36,6 +86,36 @@
 ================================================== */
 
 @media (max-width: 768px) {
+  .container {
+    width: min(var(--container), calc(100% - 2rem));
+  }
+
+  section {
+    padding: 5rem 0;
+  }
+
+  h1 {
+    letter-spacing: -2px;
+  }
+
+  h2 {
+    letter-spacing: -1px;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .section-label {
+    margin-bottom: 2rem;
+
+    letter-spacing: 3px;
+  }
+
+  .section-heading {
+    margin-bottom: 3rem;
+  }
+
   /* ------------------------------------------
      MOBILE NAVIGATION
   ------------------------------------------ */
@@ -220,7 +300,9 @@
   ------------------------------------------ */
 
   .hero {
-    padding: 7rem 0 4rem;
+    min-height: auto;
+
+    padding: 7.5rem 0 4.5rem;
   }
 
   .hero__content {
@@ -237,12 +319,32 @@
 
   .hero__eyebrow {
     justify-content: center;
+
+    margin-bottom: 1.5rem;
+
+    font-size: 0.72rem;
+
+    letter-spacing: 3px;
+  }
+
+  .hero__eyebrow::before {
+    width: 42px;
+  }
+
+  .hero__title {
+    margin-bottom: 2rem;
+
+    font-size: clamp(3.2rem, 13vw, 5rem);
+
+    letter-spacing: -2px;
   }
 
   .hero__description {
     max-width: 100%;
 
-    margin-inline: auto;
+    margin: 0 auto 2.5rem;
+
+    font-size: 1rem;
   }
 
   .hero__actions {
@@ -256,6 +358,377 @@
 
     margin-inline: auto;
   }
+
+  .hero__photo img {
+    border-radius: 22px;
+  }
+
+  /* ------------------------------------------
+     ABOUT
+  ------------------------------------------ */
+
+  .about {
+    padding: 5rem 0;
+  }
+
+  .about__content {
+    grid-template-columns: 1fr;
+
+    gap: 2.5rem;
+  }
+
+  .about__content::before {
+    display: none;
+  }
+
+  .about__left h2 {
+    max-width: 100%;
+
+    font-size: clamp(2.5rem, 10vw, 4rem);
+
+    letter-spacing: -2px;
+  }
+
+  .about__right {
+    max-width: 100%;
+  }
+
+  .about__right p {
+    margin-bottom: 1.5rem;
+
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .about__signature {
+    margin-top: 2rem;
+  }
+
+  /* ------------------------------------------
+     EVOLUTION
+  ------------------------------------------ */
+
+  .evolution {
+    padding: 5rem 0;
+
+    scroll-margin-top: 6rem;
+  }
+
+  .evolution__hero {
+    margin-bottom: 3rem;
+  }
+
+  .evolution__eyebrow {
+    letter-spacing: 3px;
+  }
+
+  .evolution__title {
+    font-size: clamp(2.4rem, 10vw, 4rem);
+  }
+
+  .evolution__lead {
+    margin-top: 1.5rem;
+
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .timeline {
+    margin-top: 3rem;
+    padding: 2rem 0;
+  }
+
+  .timeline__line {
+    left: 9px;
+
+    transform: none;
+  }
+
+  .timeline__items {
+    gap: 4rem;
+  }
+
+  .timeline__item {
+    grid-template-columns: 18px minmax(0, 1fr);
+    align-items: start;
+    gap: 1.25rem;
+  }
+
+  .timeline__item::before {
+    display: none;
+  }
+
+  .timeline__center {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+
+    align-self: start;
+
+    padding-top: 0.35rem;
+  }
+
+  .timeline__left,
+  .timeline__right {
+    grid-column: 2;
+  }
+
+  .timeline__left {
+    grid-row: 1;
+  }
+
+  .timeline__right {
+    grid-row: 2;
+  }
+
+  .timeline__item:nth-child(2) .timeline__left {
+    grid-row: 2;
+  }
+
+  .timeline__item:nth-child(2) .timeline__right {
+    grid-row: 1;
+  }
+
+  .timeline__preview {
+    border-radius: 18px;
+  }
+
+  .timeline__overlay {
+    padding: 1.2rem;
+  }
+
+  .timeline__left h3,
+  .timeline__right h3 {
+    font-size: 1.3rem;
+  }
+
+  .timeline__left p,
+  .timeline__right p {
+    line-height: 1.75;
+  }
+
+  /* ------------------------------------------
+     GATEWAY
+  ------------------------------------------ */
+
+  .gateway {
+    min-height: auto;
+
+    padding: 5rem 0;
+  }
+
+  .gateway .container {
+    gap: 1.2rem;
+  }
+
+  .gateway__title {
+    font-size: clamp(2.5rem, 11vw, 4rem);
+
+    letter-spacing: -1px;
+  }
+
+  /* ------------------------------------------
+     PROJECTS
+  ------------------------------------------ */
+
+  .projects {
+    padding: 5rem 0;
+  }
+
+  .projects__worlds {
+    gap: 4.5rem;
+
+    margin-top: 4rem;
+  }
+
+  .world-card,
+  .next-mission {
+    grid-template-columns: 1fr;
+  }
+
+  .world-card {
+    gap: 2rem;
+
+    padding: 0;
+  }
+
+  .world-card--reverse .world-card__media,
+  .world-card--reverse .world-card__content {
+    order: initial;
+  }
+
+  .world-card__media {
+    border-radius: 22px;
+  }
+
+  .world-card__title {
+    font-size: clamp(2.4rem, 10vw, 3.6rem);
+
+    letter-spacing: -1px;
+  }
+
+  .world-card__description {
+    max-width: 100%;
+  }
+
+  .world-card__button,
+  .next-mission__link,
+  .timeline__button {
+    min-height: 44px;
+  }
+
+  .next-mission {
+    gap: 2.5rem;
+
+    margin-top: 6rem;
+    padding: 2rem;
+
+    border-radius: 28px;
+  }
+
+  .next-mission__visual {
+    min-height: 280px;
+  }
+
+  .next-mission__visual::before {
+    width: 260px;
+    height: 260px;
+  }
+
+  .next-mission__visual::after {
+    width: 180px;
+    height: 180px;
+  }
+
+  .mission-orbit {
+    width: 240px;
+    height: 120px;
+  }
+
+  .mission-spacecraft__trail {
+    width: 86px;
+  }
+
+  .mission-destination {
+    right: 4%;
+
+    letter-spacing: 2px;
+  }
+
+  .next-mission__title {
+    font-size: clamp(2.6rem, 11vw, 4rem);
+
+    letter-spacing: -2px;
+  }
+
+  .next-mission__lead {
+    font-size: 1.1rem;
+  }
+
+  /* ------------------------------------------
+     HORIZON
+  ------------------------------------------ */
+
+  .horizon {
+    min-height: auto;
+
+    padding: 6rem 0;
+  }
+
+  .horizon__eyebrow {
+    letter-spacing: 3px;
+  }
+
+  .horizon__title {
+    margin-bottom: 2rem;
+
+    font-size: clamp(3rem, 12vw, 5rem);
+
+    letter-spacing: -2px;
+  }
+
+  .horizon__text {
+    font-size: 1.05rem;
+  }
+
+  .horizon__signature {
+    margin-top: 3rem;
+  }
+
+  /* ------------------------------------------
+     CONTACT
+  ------------------------------------------ */
+
+  .contact {
+    min-height: auto;
+
+    padding: 5rem 0 3rem;
+  }
+
+  .contact__hero {
+    margin-bottom: 3.5rem;
+  }
+
+  .contact__title {
+    font-size: clamp(3rem, 12vw, 5rem);
+
+    letter-spacing: -2px;
+  }
+
+  .contact__coordinates {
+    grid-template-columns: 1fr;
+  }
+
+  .contact__scene {
+    border-radius: 24px;
+  }
+
+  .contact__scene-image {
+    aspect-ratio: 16 / 10;
+
+    object-position: center;
+  }
+
+  .contact__transmission {
+    margin-top: 5rem;
+  }
+
+  /* ------------------------------------------
+     MISSION LOG
+  ------------------------------------------ */
+
+  .mission-log {
+    padding: 5rem 0 6rem;
+  }
+
+  .mission-log__hero {
+    margin-bottom: 4rem;
+  }
+
+  .mission-log__title {
+    font-size: clamp(3rem, 12vw, 5rem);
+
+    letter-spacing: -2px;
+  }
+
+  .mission-log__section {
+    grid-template-columns: 1fr;
+
+    gap: 1rem;
+
+    padding: 3rem 0;
+  }
+
+  .mission-log__progress li {
+    gap: 1rem;
+  }
+
+  /* ------------------------------------------
+     FOOTER
+  ------------------------------------------ */
+
+  .footer {
+    padding: 3rem 0;
+  }
 }
 
 /* ==================================================
@@ -264,6 +737,20 @@
 ================================================== */
 
 @media (max-width: 480px) {
+  .container {
+    width: min(var(--container), calc(100% - 1.25rem));
+  }
+
+  section {
+    padding: 4rem 0;
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+
+    letter-spacing: 2px;
+  }
+
   .header {
     top: 0.7rem;
 
@@ -299,5 +786,223 @@
     padding: 0.9rem;
 
     font-size: 0.95rem;
+  }
+
+  .hero {
+    padding: 6.8rem 0 3.8rem;
+  }
+
+  .hero__content {
+    gap: 2.5rem;
+  }
+
+  .hero__eyebrow {
+    gap: 0.75rem;
+
+    font-size: 0.68rem;
+    letter-spacing: 2px;
+  }
+
+  .hero__eyebrow::before {
+    width: 30px;
+  }
+
+  .hero__title {
+    font-size: clamp(2.8rem, 14vw, 4.2rem);
+  }
+
+  .hero__actions {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 0.75rem;
+  }
+
+  .universe-link {
+    min-height: 44px;
+  }
+
+  .energy {
+    width: calc(var(--energy) * 48px);
+  }
+
+  .label {
+    font-size: 1rem;
+  }
+
+  .hero__photo {
+    width: min(100%, 280px);
+  }
+
+  .about__left h2,
+  .evolution__title,
+  .gateway__title,
+  .world-card__title,
+  .next-mission__title,
+  .horizon__title,
+  .contact__title {
+    letter-spacing: -1px;
+  }
+
+  .timeline__items {
+    gap: 3.5rem;
+  }
+
+  .timeline__item {
+    gap: 1rem;
+  }
+
+  .timeline__preview {
+    aspect-ratio: 4 / 3;
+  }
+
+  .timeline__overlay {
+    padding: 1rem;
+  }
+
+  .timeline__project {
+    font-size: 1rem;
+  }
+
+  .timeline__button {
+    margin-top: 0.35rem;
+  }
+
+  .projects__worlds {
+    gap: 4rem;
+  }
+
+  .world-card__media {
+    border-radius: 18px;
+  }
+
+  .world-card__image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .world-card__tech {
+    gap: 0.5rem;
+  }
+
+  .world-card__tech span {
+    padding: 0.4rem 0.7rem;
+  }
+
+  .next-mission {
+    margin-top: 4.5rem;
+    padding: 1.25rem;
+
+    border-radius: 22px;
+  }
+
+  .next-mission__visual {
+    min-height: 220px;
+  }
+
+  .next-mission__visual::before {
+    width: 210px;
+    height: 210px;
+  }
+
+  .next-mission__visual::after {
+    width: 150px;
+    height: 150px;
+  }
+
+  .mission-orbit {
+    width: 190px;
+    height: 96px;
+  }
+
+  .mission-spacecraft {
+    transform: rotate(-18deg) translateX(-14px);
+  }
+
+  .mission-spacecraft__trail {
+    width: 58px;
+  }
+
+  .mission-destination {
+    right: 0;
+    bottom: 12%;
+
+    font-size: 0.68rem;
+    letter-spacing: 1.5px;
+  }
+
+  .next-mission__progress-item {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 0.35rem;
+  }
+
+  .horizon {
+    padding: 5rem 0;
+  }
+
+  .horizon__text br,
+  .horizon__title br,
+  .contact__title br,
+  .gateway__title br {
+    display: none;
+  }
+
+  .contact {
+    padding: 4rem 0 3rem;
+  }
+
+  .contact__hero {
+    margin-bottom: 3rem;
+  }
+
+  .contact__scene {
+    border-radius: 18px;
+  }
+
+  .contact__scene-image {
+    aspect-ratio: 4 / 5;
+
+    object-position: 63% center;
+
+    animation-duration: 24s;
+  }
+
+  .coordinate {
+    padding: 1.25rem;
+
+    border-radius: 18px;
+  }
+
+  .contact__line {
+    width: 100%;
+  }
+
+  .mission-log {
+    padding: 4rem 0 5rem;
+  }
+
+  .mission-log__section {
+    padding: 2.5rem 0;
+  }
+
+  .mission-log__progress li {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .mission-header {
+    padding: 1.25rem 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
